@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 262 100% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 253 100% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 253 100% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 246 100% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 253 100% 8%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 253 62% 15%;
+    --muted-foreground: 228 27% 65%;
+
+    --accent: 246 62% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 253 62% 15%;
+    --input: 253 62% 15%;
+    --ring: 246 100% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 262 100% 11%;
+    --sidebar-foreground: 228 27% 65%;
+    --sidebar-primary: 246 100% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 253 62% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 253 62% 15%;
+    --sidebar-ring: 246 100% 35%;
+
+    /* Custom CoopiFi Colors */
+    --coopifi-dark: 262 100% 11%;
+    --coopifi-primary: 246 100% 35%;
+    --coopifi-secondary: 228 27% 65%;
+    --coopifi-accent: 253 100% 8%;
+    --coopifi-deepest: 267 100% 13%;
+    
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--coopifi-primary)), hsl(var(--coopifi-secondary)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--coopifi-accent)), hsl(var(--coopifi-deepest)));
+  }
+
+  .dark {
+    --background: 262 100% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 253 100% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 253 100% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 246 100% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 253 100% 8%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 253 62% 15%;
+    --muted-foreground: 228 27% 65%;
+
+    --accent: 246 62% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 253 62% 15%;
+    --input: 253 62% 15%;
+    --ring: 246 100% 35%;
+    
+    --sidebar-background: 262 100% 11%;
+    --sidebar-foreground: 228 27% 65%;
+    --sidebar-primary: 246 100% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 253 62% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 253 62% 15%;
+    --sidebar-ring: 246 100% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,4 +1,5 @@
 // import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -21,8 +22,8 @@ export default function HeroSection() {
             >
               Open App
             </Button> */}
-            <a
-              href="/dashboard"
+            <Link
+              to="/dashboard"
               className="relative px-6 py-3 rounded-full bg-[#070021] text-white hover:text-[#070021] transition-all duration-300 font-medium overflow-hidden group"
               style={{
                 background:
@@ -32,7 +33,7 @@ export default function HeroSection() {
             >
               <span className="relative z-10">Open App</span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#88AAF1] via-[#A0D2F3] to-[#B8FAF6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
-            </a>
+            </Link>
           </div>
 
           <div className="relative flex justify-center items-center">

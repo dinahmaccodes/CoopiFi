@@ -17,5 +17,6 @@
     "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true
-  }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

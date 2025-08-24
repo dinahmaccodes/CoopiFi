@@ -9,14 +9,11 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
-  },
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "allowJs": true
+  }
 }

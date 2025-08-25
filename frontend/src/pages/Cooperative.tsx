@@ -17,7 +17,7 @@ const liquidityPools = [
     name: "USDC Pool",
     symbol: "wUSDC",
     balance: "$1,200,000",
-    apy: "8.5%",
+    apy: "5%",
     risk: "Stable",
     riskColor: "success"
   },
@@ -30,12 +30,12 @@ const liquidityPools = [
     riskColor: "warning"
   },
   {
-    name: "USDT Pool",
-    symbol: "wUSDT", 
-    balance: "$400,000",
-    apy: "7.8%",
-    risk: "Stable",
-    riskColor: "success"
+    name: "BTC Pool",
+    symbol: "wBTC", 
+    balance: "$800,000",
+    apy: "14%",
+    risk: "Volatile",
+    riskColor: "warning"
   }
 ];
 

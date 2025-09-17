@@ -26,8 +26,8 @@ const recentActivity = [
     type: "reward"
   },
   {
-    action: "wUSDT Rewards Claimed",
-    amount: "+$8.90",
+    action: "wBTC Rewards Claimed",
+    amount: "+$12.45",
     date: "2 days ago", 
     type: "reward"
   },
@@ -193,7 +193,7 @@ export default function Earnings() {
               {[
                 { pool: "wUSDC Pool", earned: "$456.23", percentage: "37%" },
                 { pool: "wETH Pool", earned: "$523.18", percentage: "42%" },
-                { pool: "wUSDT Pool", earned: "$255.15", percentage: "21%" }
+                { pool: "wBTC Pool", earned: "$367.89", percentage: "30%" }
               ].map((item, index) => (
                 <div key={index} className="flex items-center justify-between">
                   <div>

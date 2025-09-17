@@ -28,11 +28,11 @@ const pools = [
     icon: "🔷"
   },
   {
-    name: "Wrapped USDT",
-    symbol: "wUSDT",
-    description: "Conservative stablecoin strategy with consistent returns",
+    name: "Wrapped Bitcoin",
+    symbol: "wBTC",
+    description: "Bitcoin-backed pool with higher yield potential and enhanced security",
     balance: "$400,000", 
-    apy: "7.8%",
+    apy: "14.2%",
     risk: "Low Risk",
     riskLevel: 1,
     utilization: 91,

@@ -23,11 +23,11 @@ const stakingOptions = [
     minStake: "0.1"
   },
   {
-    name: "wUSDT",
-    apy: "7.8%", 
-    risk: "Low Risk",
-    riskColor: "success",
-    minStake: "100"
+    name: "wBTC",
+    apy: "14.2%", 
+    risk: "Medium Risk",
+    riskColor: "warning",
+    minStake: "0.001"
   }
 ];
 

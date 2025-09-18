@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
@@ -13,28 +19,28 @@ const stakingOptions = [
     apy: "8.5%",
     risk: "Low Risk",
     riskColor: "success",
-    minStake: "100"
+    minStake: "100",
   },
   {
-    name: "wETH", 
+    name: "wETH",
     apy: "12.3%",
     risk: "Medium Risk",
     riskColor: "warning",
-    minStake: "0.1"
+    minStake: "0.1",
   },
   {
     name: "wBTC",
-    apy: "14.2%", 
+    apy: "14.2%",
     risk: "Medium Risk",
     riskColor: "warning",
-    minStake: "0.001"
-  }
+    minStake: "0.001",
+  },
 ];
 
 const stakingBenefits = [
   "Daily Rewards - Earn rewards every day",
   "Compound Growth - Automatically reinvest earnings",
-  "Insurance Protected - Your stake is protected by cooperative insurance"
+  "Insurance Protected - Your stake is protected by cooperative insurance",
 ];
 
 export default function Stake() {
@@ -45,20 +51,22 @@ export default function Stake() {
   const calculateReturns = (amount: string, apy: string) => {
     if (!amount || isNaN(Number(amount))) return "$0.00";
     const principal = Number(amount);
-    const rate = Number(apy.replace('%', '')) / 100;
+    const rate = Number(apy.replace("%", "")) / 100;
     const annual = principal * rate;
     return `$${annual.toFixed(2)}`;
   };
 
   const handleAmountChange = (value: string) => {
     setStakeAmount(value);
-    const selected = stakingOptions.find(opt => opt.name === selectedPool);
+    const selected = stakingOptions.find((opt) => opt.name === selectedPool);
     if (selected) {
       setEstimatedReturns(calculateReturns(value, selected.apy));
     }
   };
 
-  const selectedOption = stakingOptions.find(opt => opt.name === selectedPool);
+  const selectedOption = stakingOptions.find(
+    (opt) => opt.name === selectedPool
+  );
 
   return (
     <div className="space-y-6">
@@ -66,7 +74,8 @@ export default function Stake() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-foreground">Stake Tokens</h1>
         <p className="text-muted-foreground">
-          Stake your tokens to earn rewards and participate in cooperative governance.
+          Stake your tokens to earn rewards and participate in cooperative
+          governance.
         </p>
       </div>
 
@@ -93,26 +102,32 @@ export default function Stake() {
                       key={option.name}
                       className={`p-4 rounded-lg border cursor-pointer transition-colors ${
                         selectedPool === option.name
-                          ? 'border-coopifi-primary bg-coopifi-primary/10'
-                          : 'border-border bg-card/50 hover:border-coopifi-primary/50'
+                          ? "border-coopifi-primary bg-coopifi-primary/10"
+                          : "border-border bg-card/50 hover:border-coopifi-primary/50"
                       }`}
                       onClick={() => setSelectedPool(option.name)}
                     >
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-card-foreground">{option.name}</span>
-                            <Badge 
-                              variant="outline" 
+                            <span className="font-medium text-card-foreground">
+                              {option.name}
+                            </span>
+                            <Badge
+                              variant="outline"
                               className={`border-${option.riskColor} text-${option.riskColor}`}
                             >
                               {option.risk}
                             </Badge>
                           </div>
-                          <p className="text-sm text-muted-foreground">Min stake: {option.minStake} {option.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                            Min stake: {option.minStake} {option.name}
+                          </p>
                         </div>
                         <div className="text-right">
-                          <div className="font-semibold text-success">{option.apy}</div>
+                          <div className="font-semibold text-success">
+                            {option.apy}
+                          </div>
                           <p className="text-xs text-muted-foreground">APY</p>
                         </div>
                       </div>
@@ -123,7 +138,9 @@ export default function Stake() {
 
               {/* Amount Input */}
               <div className="space-y-2">
-                <Label htmlFor="amount" className="text-card-foreground">Amount to Stake</Label>
+                <Label htmlFor="amount" className="text-card-foreground">
+                  Amount to Stake
+                </Label>
                 <div className="relative">
                   <Input
                     id="amount"
@@ -149,18 +166,25 @@ export default function Stake() {
                 <CardContent className="p-4">
                   <div className="flex items-center gap-2 mb-3">
                     <Calculator className="h-4 w-4 text-coopifi-primary" />
-                    <span className="font-medium text-card-foreground">Estimated Annual Returns</span>
+                    <span className="font-medium text-card-foreground">
+                      Estimated Annual Returns
+                    </span>
                   </div>
-                  <div className="text-2xl font-bold text-success">{estimatedReturns}</div>
+                  <div className="text-2xl font-bold text-success">
+                    {estimatedReturns}
+                  </div>
                   <p className="text-xs text-muted-foreground mt-1">
                     Based on current APY of {selectedOption?.apy || "0%"}
                   </p>
                 </CardContent>
               </Card>
 
-              <Button 
+              <Button
                 className="w-full bg-coopifi-primary hover:bg-coopifi-primary/90 text-primary-foreground"
-                disabled={!stakeAmount || Number(stakeAmount) < Number(selectedOption?.minStake || 0)}
+                disabled={
+                  !stakeAmount ||
+                  Number(stakeAmount) < Number(selectedOption?.minStake || 0)
+                }
               >
                 Stake Tokens
               </Button>
@@ -182,12 +206,17 @@ export default function Stake() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-3 bg-card/30 rounded-lg">
                   <div>
-                    <p className="font-medium text-card-foreground">wUSDC Pool</p>
+                    <p className="font-medium text-card-foreground">
+                      wUSDC Pool
+                    </p>
                     <p className="text-sm text-muted-foreground">Active</p>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold text-card-foreground">$5,000</p>
-                    <Badge variant="secondary" className="bg-coopifi-accent text-coopifi-secondary">
+                    <Badge
+                      variant="secondary"
+                      className="bg-coopifi-accent text-coopifi-secondary"
+                    >
                       Active
                     </Badge>
                   </div>
@@ -199,7 +228,9 @@ export default function Stake() {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Total Staked</span>
-                  <span className="font-semibold text-card-foreground">$5,000</span>
+                  <span className="font-semibold text-card-foreground">
+                    $5,000
+                  </span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-muted-foreground">Active Stakes</span>
@@ -224,8 +255,12 @@ export default function Stake() {
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-coopifi-primary rounded-full mt-2 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-card-foreground">{title}</p>
-                      <p className="text-sm text-muted-foreground">{description}</p>
+                      <p className="font-medium text-card-foreground">
+                        {title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {description}
+                      </p>
                     </div>
                   </div>
                 );

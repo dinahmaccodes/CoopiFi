@@ -1,10 +1,17 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, DollarSign, TrendingUp, Activity } from "lucide-react";
 
 const cooperativeData = {
   name: "Green Energy Cooperative",
-  description: "Renewable energy investment pool focused on solar and wind projects.",
+  description:
+    "Renewable energy investment pool focused on solar and wind projects.",
   members: 156,
   yourStake: "$15,000",
   totalAssets: "$2,450,000",
@@ -19,24 +26,24 @@ const liquidityPools = [
     balance: "$1,200,000",
     apy: "8.5%",
     risk: "Stable",
-    riskColor: "success"
+    riskColor: "success",
   },
   {
-    name: "ETH Pool", 
+    name: "ETH Pool",
     symbol: "wETH",
     balance: "$850,000",
     apy: "12.3%",
     risk: "Volatile",
-    riskColor: "warning"
+    riskColor: "warning",
   },
   {
     name: "BTC Pool",
-    symbol: "wBTC", 
+    symbol: "wBTC",
     balance: "$400,000",
     apy: "14.2%",
     risk: "Medium",
-    riskColor: "warning"
-  }
+    riskColor: "warning",
+  },
 ];
 
 export default function Cooperative() {
@@ -61,20 +68,31 @@ export default function Cooperative() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <h3 className="font-semibold text-card-foreground">{cooperativeData.name}</h3>
-              <p className="text-sm text-muted-foreground">{cooperativeData.description}</p>
+              <h3 className="font-semibold text-card-foreground">
+                {cooperativeData.name}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {cooperativeData.description}
+              </p>
             </div>
-            
+
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Total Members</span>
-              <Badge variant="secondary" className="bg-coopifi-accent text-coopifi-secondary">
+              <span className="text-sm text-muted-foreground">
+                Total Members
+              </span>
+              <Badge
+                variant="secondary"
+                className="bg-coopifi-accent text-coopifi-secondary"
+              >
                 {cooperativeData.members}
               </Badge>
             </div>
-            
+
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Your Stake</span>
-              <span className="font-semibold text-card-foreground">{cooperativeData.yourStake}</span>
+              <span className="font-semibold text-card-foreground">
+                {cooperativeData.yourStake}
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -90,15 +108,17 @@ export default function Cooperative() {
             <div className="text-3xl font-bold text-card-foreground">
               {cooperativeData.totalAssets}
             </div>
-            
+
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Performance</span>
               <div className="flex items-center gap-1 text-success">
                 <TrendingUp className="h-4 w-4" />
-                <span className="font-semibold">{cooperativeData.performance}</span>
+                <span className="font-semibold">
+                  {cooperativeData.performance}
+                </span>
               </div>
             </div>
-            
+
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Risk Level</span>
               <Badge variant="outline" className="border-warning text-warning">
@@ -113,17 +133,21 @@ export default function Cooperative() {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Activity className="h-5 w-5 text-coopifi-primary" />
-          <h2 className="text-2xl font-semibold text-foreground">Liquidity Pool Assets</h2>
+          <h2 className="text-2xl font-semibold text-foreground">
+            Liquidity Pool Assets
+          </h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {liquidityPools.map((pool, index) => (
             <Card key={index} className="bg-gradient-card border-border">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg text-card-foreground">{pool.name}</CardTitle>
-                  <Badge 
-                    variant="outline" 
+                  <CardTitle className="text-lg text-card-foreground">
+                    {pool.name}
+                  </CardTitle>
+                  <Badge
+                    variant="outline"
                     className={`border-${pool.riskColor} text-${pool.riskColor}`}
                   >
                     {pool.risk}
@@ -137,7 +161,7 @@ export default function Cooperative() {
                 <div className="text-2xl font-bold text-card-foreground">
                   {pool.balance}
                 </div>
-                
+
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">APY</span>
                   <span className="font-semibold text-success">{pool.apy}</span>
@@ -151,16 +175,24 @@ export default function Cooperative() {
       {/* Pool Statistics */}
       <Card className="bg-gradient-card border-border">
         <CardHeader>
-          <CardTitle className="text-xl text-card-foreground">Pool Statistics</CardTitle>
+          <CardTitle className="text-xl text-card-foreground">
+            Pool Statistics
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-2xl font-bold text-card-foreground">$2.45M</div>
-              <p className="text-sm text-muted-foreground">Total Value Locked</p>
+              <div className="text-2xl font-bold text-card-foreground">
+                $2.45M
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Total Value Locked
+              </p>
             </div>
             <div>
-              <div className="text-2xl font-bold text-card-foreground">9.5%</div>
+              <div className="text-2xl font-bold text-card-foreground">
+                9.5%
+              </div>
               <p className="text-sm text-muted-foreground">Average APY</p>
             </div>
             <div>
